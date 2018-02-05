@@ -58,7 +58,9 @@ public class PdfWP extends JFrame implements ActionListener, DropTargetListener 
 		setSize(500, 150);
 		setVisible(true);
 	
-		dropTarget = new DropTarget(this.lbl, DnDConstants.ACTION_COPY_OR_MOVE,this);
+		System.out.println("PdfWP");
+		
+		dropTarget = new DropTarget(this, DnDConstants.ACTION_COPY_OR_MOVE,this);
 		
 		this.addWindowListener(new WindowAdapter() {
 			@Override
@@ -70,7 +72,7 @@ public class PdfWP extends JFrame implements ActionListener, DropTargetListener 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		System.out.println("actionPerformed");
 		if(e.getSource() == btn) {
 			JFileChooser chooser = new JFileChooser();
 			chooser.setMultiSelectionEnabled(false);
@@ -105,30 +107,34 @@ public class PdfWP extends JFrame implements ActionListener, DropTargetListener 
 	@Override
 	public void dragEnter(DropTargetDragEvent dtde) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("dragEnter");
 	}
 
 	@Override
 	public void dragOver(DropTargetDragEvent dtde) {
 		// TODO Auto-generated method stub
+		System.out.println("dragOver");
 		
 	}
 
 	@Override
 	public void dropActionChanged(DropTargetDragEvent dtde) {
 		// TODO Auto-generated method stub
+		System.out.println("dropActionChanged");
 		
 	}
 
 	@Override
 	public void dragExit(DropTargetEvent dte) {
 		// TODO Auto-generated method stub
+		System.out.println("dragExit");
 		
 	}
 
 	@Override
 	public void drop(DropTargetDropEvent dtde) {
 		// TODO Auto-generated method stub
+		System.out.println("drop");
 		try{
            try {
                 Transferable tr = dtde.getTransferable();
